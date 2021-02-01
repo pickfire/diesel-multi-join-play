@@ -2,7 +2,7 @@ Diesel multi-join experiment
 ============================
 
 After getting footguns in sequelize and gorm, just want to try out diesel and
-state of diesel.
+state of diesel. Next https://github.com/pickfire/diesel-update-from
 
 So far, a bit hard to get started as error message are a bit confusing, for
 example you get "failed to resolve: use of undeclared crate or module
