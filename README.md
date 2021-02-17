@@ -66,6 +66,21 @@ let query = comments
     .filter(name.eq("John"));
 ```
 
+Which results in the SQL query,
+
+```sql
+SELECT
+  `comments`.`body`,
+  `posts`.`title`,
+  `users`.`name`
+ FROM ((`comments`
+INNER JOIN `posts`
+   ON `comments`.`post_id` = `posts`.`id`)
+INNER JOIN `users`
+   ON `comments`.`user_id` = `users`.`id`)
+WHERE `users`.`name` = ? -- binds: ["John"]
+```
+
 ## Get started
 
 Rust, diesel_cli (with `sqlite` feature) is required.
